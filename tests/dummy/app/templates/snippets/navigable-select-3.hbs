@@ -2,7 +2,7 @@
   {{#each currentOptions as |opt|}}
     <li class="ember-power-select-option"
       aria-selected={{ember-power-select-is-selected opt selected}}
-      aria-disabled={{opt.disabled}}
+      aria-disabled={{ember-power-select-is-disabled opt select.optionDisabled}}
       aria-current={{eq opt highlighted}}
       {{on "click" (action select opt dropdown)}}
       {{on "mouseover" (action highlight opt)}}>

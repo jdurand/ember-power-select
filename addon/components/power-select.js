@@ -40,15 +40,16 @@ function toPlainArray(collection) {
 }
 
 const initialState = {
-  options: [],              // Contains the resolved collection of options
-  results: [],              // Contains the active set of results
-  resultsCount: 0,          // Contains the number of results incuding those nested/disabled
-  selected: undefined,      // Contains the resolved selected option
-  highlighted: undefined,   // Contains the currently highlighted option (if any)
-  searchText: '',           // Contains the text of the current search
-  lastSearchedText: '',     // Contains the text of the last finished search
-  loading: false,           // Truthy if there is a pending promise that will update the results
-  isActive: false,          // Truthy if the trigger is focused. Other subcomponents can mark it as active depending on other logic.
+  options: [],               // Contains the resolved collection of options
+  results: [],               // Contains the active set of results
+  resultsCount: 0,           // Contains the number of results incuding those nested/disabled
+  selected: undefined,       // Contains the resolved selected option
+  highlighted: undefined,    // Contains the currently highlighted option (if any)
+  searchText: '',            // Contains the text of the current search
+  lastSearchedText: '',      // Contains the text of the last finished search
+  loading: false,            // Truthy if there is a pending promise that will update the results
+  isActive: false,           // Truthy if the trigger is focused. Other subcomponents can mark it as active depending on other logic.
+  optionDisabled: undefined, // Contains a function that is called for every option; the result determines if the option is disabled.
   // Private API (for now)
   _expirableSearchText: '',
   _repeatingChar: ''

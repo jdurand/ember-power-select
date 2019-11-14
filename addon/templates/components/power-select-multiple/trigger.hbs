@@ -5,7 +5,7 @@
   {{on "mousedown" this.chooseOption}}
   ...attributes>
   {{#each @select.selected as |opt idx|}}
-    <li class="ember-power-select-multiple-option {{if opt.disabled "ember-power-select-multiple-option--disabled"}}">
+    <li class="ember-power-select-multiple-option {{if (ember-power-select-is-disabled opt @select.optionDisabled) "ember-power-select-multiple-option--disabled"}}">
       {{#unless @select.disabled }}
         <span role="button"
           aria-label="remove element"
